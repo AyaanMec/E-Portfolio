@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Folder tab -->
+  <path d="M2 12 L2 10 Q2 8 4 8 L13 8 L15 6 L28 6 Q30 6 30 8 L30 12 Z" fill="#f5c518"/>
+  <!-- Folder body -->
+  <rect x="2" y="11" width="28" height="17" rx="2" fill="#f5c518"/>
+  <!-- Subtle top highlight -->
+  <rect x="2" y="11" width="28" height="3" rx="1" fill="#f9d84a" opacity="0.6"/>
+  <!-- Subtle shadow at bottom -->
+  <rect x="2" y="25" width="28" height="3" rx="2" fill="#c8a000" opacity="0.3"/>
+</svg>

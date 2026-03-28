@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+/* =====================
+   THEME VARIABLES
+   Applied to <html> via data-theme attribute
+   ===================== */
+
+
+[data-theme="terminal"] {
+  --bg:             #0d1117;
+  --bg-card:        rgba(22, 27, 34, 0.7);
+  --bg-inner:       rgba(33, 38, 45, 0.6);
+  --text:           #c9d1d9;
+  --text-muted:     #8b949e;
+  --text-dim:       #6e7681;
+  --text-dimmer:    #484f58;
+  --accent:         #b5f5a0;
+  --accent-hover:   #cbf7ba;
+  --accent-dim:     rgba(181, 245, 160, 0.07);
+  --border:         rgba(48, 54, 61, 0.8);
+  --border-light:   rgba(65, 72, 80, 0.7);
+  --border-accent:  rgba(181, 245, 160, 0.25);
+  --grad-from:      #b5f5a0;
+  --grad-to:        #7dd9c0;
+  --scrollbar:      #b5f5a0;
+  --font-body:      'Courier New', Courier, monospace;
+}
+
+[data-theme="warm"] {
+  --bg:             #faf7f2;
+  --bg-card:        rgba(240, 235, 224, 0.7);
+  --bg-inner:       rgba(220, 213, 200, 0.5);
+  --text:           #1c1917;
+  --text-muted:     #78716c;
+  --text-dim:       #a8a29e;
+  --text-dimmer:    #c4bbb6;
+  --accent:         #c2410c;
+  --accent-hover:   #ea580c;
+  --accent-dim:     rgba(194, 65, 12, 0.07);
+  --border:         #e7ddd0;
+  --border-light:   #d6cfc5;
+  --border-accent:  rgba(194, 65, 12, 0.3);
+  --grad-from:      #c2410c;
+  --grad-to:        #d97706;
+  --scrollbar:      #c2410c;
+  --font-body:      'Inter', sans-serif;
+}
+
+[data-theme="minimal"] {
+  --bg:             #f8f8f8;
+  --bg-card:        rgba(255, 255, 255, 0.9);
+  --bg-inner:       rgba(240, 240, 240, 0.7);
+  --text:           #111111;
+  --text-muted:     #555555;
+  --text-dim:       #888888;
+  --text-dimmer:    #aaaaaa;
+  --accent:         #111111;
+  --accent-hover:   #333333;
+  --accent-dim:     rgba(17, 17, 17, 0.06);
+  --border:         #e0e0e0;
+  --border-light:   #cccccc;
+  --border-accent:  rgba(17, 17, 17, 0.2);
+  --grad-from:      #111111;
+  --grad-to:        #555555;
+  --scrollbar:      #111111;
+  --font-body:      'Inter', sans-serif;
+}
+
+/* =====================
+   BASE
+   ===================== */
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: none;
+}
+
+body * { cursor: none !important; }
+
+a { text-decoration: none; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar); border-radius: 3px; }
+
+/* =====================
+   UTILITIES
+   ===================== */
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--grad-from), var(--grad-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-line {
+  background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+  height: 1px;
+}
+
+/* Hero grid — uses accent color */
+.hero-grid {
+  background-image:
+    linear-gradient(var(--accent) 1px, transparent 1px),
+    linear-gradient(90deg, var(--accent) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* =====================
+   GLOBAL THEME OVERRIDES
+   These override Tailwind utility classes site-wide when a theme is active.
+   Specificity: [data-theme] + class = (0,2,0) which beats Tailwind's (0,1,0).
+   ===================== */
+
+/* --- Text --- */
+[data-theme] .text-white       { color: var(--text); }
+[data-theme] .text-slate-200   { color: var(--text); }
+[data-theme] .text-slate-300   { color: var(--text); }
+[data-theme] .text-slate-400   { color: var(--text-muted); }
+[data-theme] .text-slate-500   { color: var(--text-dim); }
+[data-theme] .text-slate-600   { color: var(--text-dimmer); }
+[data-theme] .text-blue-400    { color: var(--accent); }
+[data-theme] .text-blue-300    { color: var(--accent-hover); }
+
+/* --- Backgrounds --- */
+[data-theme] .bg-slate-900\/40  { background-color: var(--bg-card); }
+[data-theme] .bg-slate-800\/50  { background-color: var(--bg-inner); }
+[data-theme] .bg-blue-500\/10   { background-color: var(--accent-dim); }
+[data-theme] .bg-blue-500\/5    { background-color: var(--accent-dim); }
+[data-theme] .bg-blue-600       { background-color: var(--accent); }
+[data-theme] .hover\:bg-blue-500:hover { background-color: var(--accent-hover); }
+[data-theme] .hover\:bg-blue-500\/10:hover { background-color: var(--accent-dim); }
+
+/* --- Borders --- */
+[data-theme] .border-slate-800         { border-color: var(--border); }
+[data-theme] .border-slate-700         { border-color: var(--border-light); }
+[data-theme] .border-blue-500\/50      { border-color: var(--border-accent); }
+[data-theme] .border-blue-500\/30      { border-color: var(--border-accent); }
+[data-theme] .border-blue-500\/20      { border-color: var(--border-accent); }
+[data-theme] .border-blue-500\/10      { border-color: var(--border-accent); }
+[data-theme] .hover\:border-blue-500\/50:hover { border-color: var(--border-accent); }
+[data-theme] .hover\:border-blue-500\/30:hover { border-color: var(--border-accent); }
+
+/* --- Shadows --- */
+[data-theme] .shadow-blue-600\/20 { --tw-shadow-color: rgba(var(--accent), 0.2); }
+
+/* --- Pulse dot in badge --- */
+[data-theme] .bg-blue-400 { background-color: var(--accent); }
+
+/* --- Minimal: CTA button text stays white (accent bg is black, needs white text) --- */
+[data-theme="minimal"] .bg-blue-600 { color: #ffffff; }
+
+/* --- Terminal: CTA button text uses bg color (dark text on green button) --- */
+[data-theme="terminal"] .bg-blue-600 { color: var(--bg); }
+
+/* =====================
+   CUSTOM CURSORS
+   ===================== */
+
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  top: -40px;
+  left: -40px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.18s ease;
+}
+
+/* Show only the SVG for the active theme */
+.cur           { display: none; }
+[data-theme="terminal"] .cur-terminal { display: block; }
+[data-theme="warm"]     .cur-warm     { display: block; }
+[data-theme="minimal"]  .cur-minimal  { display: block; }
+
+/* Pen nib: tip is at (3,3) so offset transform so tip = mouse position */
+[data-theme="warm"] .custom-cursor {
+  transform: translate(-11%, -11%);
+  transition: transform 0.2s ease;
+}
+
+/* ── Hover behaviours ── */
+
+/* Terminal: lock-on square appears */
+.cur-lock {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+[data-theme="terminal"] .custom-cursor[data-hovered] .cur-lock {
+  opacity: 1;
+}
+[data-theme="terminal"] .custom-cursor[data-hovered] {
+  filter: drop-shadow(0 0 4px #d97706);
+}
+
+/* Warm: pen lifts — rotates as if picking up to write */
+[data-theme="warm"] .custom-cursor[data-hovered] {
+  transform: translate(-11%, -11%) rotate(20deg);
+}
+
+/* Minimal: brackets expand outward */
+[data-theme="minimal"] .custom-cursor[data-hovered] {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* --- Terminal: monospace everything --- */
+[data-theme="terminal"] * {
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* --- Terminal: scanline + grid texture overlay --- */
+[data-theme="terminal"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  /* Horizontal scanlines every 4px */
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.07) 3px,
+    rgba(0, 0, 0, 0.07) 4px
+  );
+}
+
+/* --- Terminal: hero grid uses accent green --- */
+[data-theme="terminal"] .hero-grid {
+  opacity: 0.04;
+}
