@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-scroll'
 
-const navLinks = ['About', 'Experience', 'Projects', 'Skills', 'Contact']
+const navLinks = ['About', 'Experience', 'Projects', 'Skills', 'Goals', 'Contact']
 
 const THEMES = [
   { id: 'terminal', label: 'Terminal', swatch: '#b5f5a0' },
