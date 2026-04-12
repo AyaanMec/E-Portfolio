@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef(null)
@@ -102,13 +103,21 @@ export default function Contact() {
           <div className="section-line mb-8" />
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-600 text-sm">
             <p>© 2026 Ayaan Mecklai. Built with React + Framer Motion.</p>
-            <a
-              href="/resume.pdf"
-              download="Ayaan_Mecklai_Resume.pdf"
-              className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
-            >
-              Download Resume →
-            </a>
+            <div className="flex items-center gap-6">
+              <Link
+                to="/portfolio"
+                className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
+              >
+                Portfolio →
+              </Link>
+              <a
+                href="/resume.pdf"
+                download="Ayaan_Mecklai_Resume.pdf"
+                className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
+              >
+                Download Resume →
+              </a>
+            </div>
           </div>
         </FadeIn>
       </div>

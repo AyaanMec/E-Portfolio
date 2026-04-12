@@ -83,10 +83,8 @@ body {
   overflow-x: hidden;
   margin: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: none;
 }
 
-body * { cursor: none !important; }
 
 a { text-decoration: none; }
 
