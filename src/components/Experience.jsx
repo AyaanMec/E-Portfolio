@@ -52,7 +52,7 @@ const experiences = [
     type: 'Published',
     color: '#10b981',
     bullets: [
-      '"Efficiency of Naive Bayes Algorithm for Spam Filtering" — analyzed 6,000+ emails achieving 91% spam detection accuracy.',
+      '"Efficiency of Naive Bayes Algorithm for Spam Filtering": analyzed 6,000+ emails achieving 91% spam detection accuracy.',
       'Developed and deployed FilterMail, a Chrome web extension leveraging Naive Bayes to enhance email security for 500+ users.',
     ],
   },
@@ -86,7 +86,7 @@ export default function Experience() {
           <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">Experience</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Where I've worked</h2>
           <p className="text-slate-500 mb-14 max-w-lg">
-            From funded AI startups to mobile app co-ops — real experience building production systems.
+            From funded AI startups to mobile app co-ops, real experience building production systems.
           </p>
         </FadeIn>
 

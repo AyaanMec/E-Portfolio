@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -11,6 +11,23 @@ import Goals from './components/Goals'
 import Contact from './components/Contact'
 import Portfolio from './pages/Portfolio'
 
+function ScrollHandler() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash)
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50)
+        return
+      }
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [pathname, hash])
+
+  return null
+}
+
 function Home() {
   return (
     <main>
@@ -19,7 +36,6 @@ function Home() {
       <Experience />
       <Projects />
       <Skills />
-      <Goals />
       <Contact />
     </main>
   )
@@ -38,7 +54,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen">
-<Navbar theme={theme} setTheme={setTheme} />
+        <ScrollHandler />
+        <Navbar theme={theme} setTheme={setTheme} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />

@@ -31,17 +31,24 @@ const awards = [
   'ICE Award',
   'Lassonde Entrance Scholar',
   'IGCSE Cambridge UK',
-  'Highest Grades — Physics, Math & Chemistry (A Levels)',
+  'Highest Grades: Physics, Math & Chemistry (A Levels)',
 ]
 
 export default function About() {
   return (
     <section id="about" className="py-28 px-6">
       <div className="max-w-5xl mx-auto">
-        <FadeIn>
-          <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">About Me</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-16">Who I am</h2>
-        </FadeIn>
+        <div className="flex items-center justify-between mb-16">
+          <FadeIn>
+            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">About Me</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Who I am</h2>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-blue-500/30 shadow-lg shadow-blue-500/10 shrink-0">
+              <img src="/ayaan.png" alt="Ayaan Mecklai" className="w-full h-full object-cover" />
+            </div>
+          </FadeIn>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Text */}
@@ -57,7 +64,7 @@ export default function About() {
               <p className="text-slate-400 text-base leading-relaxed">
                 My work spans real-time motion tracking with Unity & WebSockets, telemetry dashboards
                 for Formula 1 data, and music analytics platforms. I've also shipped production code
-                at a funded AI startup and a Toronto-based mobile app company — each experience
+                at a funded AI startup and a Toronto-based mobile app company, each experience
                 pushing me to write cleaner, faster, and more impactful code.
               </p>
             </FadeIn>
@@ -103,10 +110,10 @@ export default function About() {
                 <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">Languages</p>
                 <div className="flex gap-3">
                   <span className="text-sm px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800/50 text-slate-300">
-                    English — Fluent
+                    English: Fluent
                   </span>
                   <span className="text-sm px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800/50 text-slate-300">
-                    German — Intermediate
+                    German: Intermediate
                   </span>
                 </div>
               </div>

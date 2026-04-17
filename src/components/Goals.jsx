@@ -30,7 +30,7 @@ function FadeIn({ children, delay = 0, direction = 'up' }) {
 const pillars = [
   {
     label: 'Research that ships',
-    body: 'Not papers that sit in journals — systems that reach millions of users and change how they interact with information.',
+    body: 'Not papers that sit in journals, but systems that reach millions of users and change how they interact with information.',
   },
   {
     label: 'Real-time at scale',
@@ -38,7 +38,7 @@ const pillars = [
   },
   {
     label: 'Build something of my own',
-    body: 'Every role, every system, every dataset is teaching me what it takes. For now that means going deep — on infrastructure, on ML pipelines, on code that lasts.',
+    body: 'Every role, every system, every dataset is teaching me what it takes. For now that means going deep: on infrastructure, on ML pipelines, on code that lasts.',
   },
 ]
 
@@ -55,7 +55,7 @@ export default function Goals() {
 
         <FadeIn delay={0.1}>
           <p className="text-slate-400 text-base leading-relaxed max-w-3xl mb-16">
-            My long-term aim is to work at the intersection of AI research and real-world systems —
+            My long-term aim is to work at the intersection of AI research and real-world systems,
             building things that don't just demonstrate intelligence but actually scale to people's
             lives. In five to ten years I want to be doing research that ships, whether through a
             research role at a major company or through something I build myself. The goal is the

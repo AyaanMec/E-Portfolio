@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-scroll'
+import { Link as RouterLink, useLocation } from 'react-router-dom'
 
 const navLinks = ['About', 'Experience', 'Projects', 'Skills', 'Goals', 'Contact']
 
@@ -33,6 +34,8 @@ export default function Navbar({ theme, setTheme }) {
     return () => document.removeEventListener('mousedown', handler)
   }, [])
 
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'
   const currentTheme = THEMES.find((t) => t.id === theme) || THEMES[0]
 
   return (
@@ -47,27 +50,52 @@ export default function Navbar({ theme, setTheme }) {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="hero" smooth duration={600} className="cursor-pointer">
-          <span className="text-xl font-bold gradient-text tracking-tight">AM</span>
-        </Link>
+        {isHome ? (
+          <Link to="hero" smooth duration={600} className="cursor-pointer">
+            <span className="text-xl font-bold gradient-text tracking-tight">AM</span>
+          </Link>
+        ) : (
+          <RouterLink to="/">
+            <span className="text-xl font-bold gradient-text tracking-tight">AM</span>
+          </RouterLink>
+        )}
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link}>
-              <Link
-                to={link.toLowerCase()}
-                smooth
-                duration={600}
-                offset={-80}
-                className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200 cursor-pointer font-medium tracking-wide"
-                activeClass="text-blue-400"
-                spy
-              >
-                {link}
-              </Link>
+              {isHome ? (
+                <Link
+                  to={link.toLowerCase()}
+                  smooth
+                  duration={600}
+                  offset={-80}
+                  className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200 cursor-pointer font-medium tracking-wide"
+                  activeClass="text-blue-400"
+                  spy
+                >
+                  {link}
+                </Link>
+              ) : (
+                <a
+                  href={`/#${link.toLowerCase()}`}
+                  className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200 cursor-pointer font-medium tracking-wide"
+                >
+                  {link}
+                </a>
+              )}
             </li>
           ))}
+
+          {/* More About Me */}
+          <li>
+            <RouterLink
+              to="/portfolio"
+              className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200 cursor-pointer font-medium tracking-wide"
+            >
+              More About Me
+            </RouterLink>
+          </li>
 
           {/* Resume */}
           <li>
@@ -161,16 +189,35 @@ export default function Navbar({ theme, setTheme }) {
             <ul className="flex flex-col px-6 py-4 gap-4">
               {navLinks.map((link) => (
                 <li key={link}>
-                  <Link
-                    to={link.toLowerCase()}
-                    smooth duration={600} offset={-80}
-                    className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer font-medium"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {link}
-                  </Link>
+                  {isHome ? (
+                    <Link
+                      to={link.toLowerCase()}
+                      smooth duration={600} offset={-80}
+                      className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer font-medium"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link}
+                    </Link>
+                  ) : (
+                    <a
+                      href={`/#${link.toLowerCase()}`}
+                      className="text-slate-400 hover:text-blue-400 transition-colors font-medium"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link}
+                    </a>
+                  )}
                 </li>
               ))}
+              <li>
+                <RouterLink
+                  to="/portfolio"
+                  className="text-slate-400 hover:text-blue-400 transition-colors font-medium"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  More About Me
+                </RouterLink>
+              </li>
               <li>
                 <a href="/resume.pdf" download="Ayaan_Mecklai_Resume.pdf"
                   className="text-blue-400 font-medium" onClick={() => setMenuOpen(false)}>

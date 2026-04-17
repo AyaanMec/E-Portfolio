@@ -70,7 +70,7 @@ export default function Contact() {
             Let's connect
           </h2>
           <p className="text-slate-500 mb-14 max-w-lg">
-            Whether it's an internship, project collab, or just a chat — my inbox is always open.
+            Whether it's an internship, project collab, or just a chat, my inbox is always open.
           </p>
         </FadeIn>
 
@@ -108,7 +108,7 @@ export default function Contact() {
                 to="/portfolio"
                 className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
               >
-                Portfolio →
+                More About Me →
               </Link>
               <a
                 href="/resume.pdf"
