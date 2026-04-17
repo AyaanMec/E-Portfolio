@@ -111,8 +111,8 @@ export default function Contact() {
                 More About Me →
               </Link>
               <a
-                href="/resume.pdf"
-                download="Ayaan_Mecklai_Resume.pdf"
+                href="/AyaanResumeApril2026.pdf"
+                download="AyaanMecklai_Resume.pdf"
                 className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
               >
                 Download Resume →

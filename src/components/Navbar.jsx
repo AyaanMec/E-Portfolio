@@ -100,8 +100,8 @@ export default function Navbar({ theme, setTheme }) {
           {/* Resume */}
           <li>
             <a
-              href="/resume.pdf"
-              download="Ayaan_Mecklai_Resume.pdf"
+              href="/AyaanResumeApril2026.pdf"
+              download="AyaanMecklai_Resume.pdf"
               className="text-sm px-4 py-2 border border-blue-500/50 text-blue-400 rounded-lg hover:bg-blue-500/10 transition-all duration-200 font-medium"
             >
               Resume
@@ -219,7 +219,7 @@ export default function Navbar({ theme, setTheme }) {
                 </RouterLink>
               </li>
               <li>
-                <a href="/resume.pdf" download="Ayaan_Mecklai_Resume.pdf"
+                <a href="/AyaanResumeApril2026.pdf" download="AyaanMecklai_Resume.pdf"
                   className="text-blue-400 font-medium" onClick={() => setMenuOpen(false)}>
                   Resume
                 </a>
