@@ -217,19 +217,14 @@ export default function Portfolio() {
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            {/* Replace VIDEO_ID below with your YouTube video ID */}
-            <div
-              className="relative w-full rounded-xl overflow-hidden border border-slate-800 bg-slate-900/40"
-              style={{ paddingTop: '56.25%' }}
-            >
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/VIDEO_ID"
-                title="About Me Ayaan Mecklai"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <div className="relative w-full rounded-xl overflow-hidden border border-slate-800 bg-slate-900/40">
+              <video
+                className="w-full rounded-xl"
+                controls
+                preload="metadata"
+              >
+                <source src="/COOP2100.mp4" type="video/mp4" />
+              </video>
             </div>
           </FadeIn>
         </div>
