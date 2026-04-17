@@ -223,7 +223,7 @@ export default function Portfolio() {
             >
               <iframe
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/TaHPNX3O1Cw"
+                src="https://www.youtube.com/embed/KxUo9zky1cM"
                 title="About Me — Ayaan Mecklai"
                 style={{ border: 0 }}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
