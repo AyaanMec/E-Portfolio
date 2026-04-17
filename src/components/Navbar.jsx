@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-scroll'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
 
-const navLinks = ['About', 'Experience', 'Projects', 'Skills', 'Goals', 'Contact']
+const navLinks = ['About', 'Experience', 'Projects', 'Skills', 'Contact']
 
 const THEMES = [
   { id: 'terminal', label: 'Terminal', swatch: '#b5f5a0' },
