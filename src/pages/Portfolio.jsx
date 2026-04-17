@@ -217,14 +217,18 @@ export default function Portfolio() {
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="relative w-full rounded-xl overflow-hidden border border-slate-800 bg-slate-900/40">
-              <video
-                className="w-full rounded-xl"
-                controls
-                preload="metadata"
-              >
-                <source src="/COOP2100.mp4" type="video/mp4" />
-              </video>
+            <div
+              className="relative w-full rounded-xl overflow-hidden border border-slate-800 bg-slate-900/40"
+              style={{ paddingTop: '56.25%' }}
+            >
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/TaHPNX3O1Cw"
+                title="About Me — Ayaan Mecklai"
+                style={{ border: 0 }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </FadeIn>
         </div>
